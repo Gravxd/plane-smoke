@@ -59,7 +59,7 @@ local function DrawSmoke()
                     local PLAYER_ID = GetPlayerFromServerId(player)
                     local PED = GetPlayerPed(PLAYER_ID)
                     local VEHICLE = GetVehiclePedIsIn(PED, false)
-                    if DoesEntityExist(VEHICLE) then
+                    if DoesEntityExist(VEHICLE) and PED ~= 0 and PLAYER_ID ~= -1 then
                         if data.handle then
                             SetParticleFxLoopedScale(data.handle, data.size + 0.0)
                             SetParticleFxLoopedColour(data.handle, data.r + 0.0, data.g + 0.0, data.b + 0.0, 0)
